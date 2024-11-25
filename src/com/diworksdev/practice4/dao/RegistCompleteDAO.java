@@ -1,13 +1,12 @@
-package com.diworksdev.practice3.dao;
+package com.diworksdev.practice4.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 //import java.sql.ResultSet;
 
-import com.diworksdev.practice3.util.DBConnector;
-import com.diworksdev.practice3.util.DateUtil;
-//import com.diworksdev.practice3.util.DeleteFlag;
+import com.diworksdev.practice4.util.DBConnector;
+import com.diworksdev.practice4.util.DateUtil;
 
 //org.springframework.dao.DataAccessResourceFailureException; //(DBサーバがダウンしている場合に発生する例外)。
 
@@ -57,7 +56,7 @@ public class RegistCompleteDAO {
 
 	//これ元々記述してたやつ、上は小川講師に追加してもらったやつ！
 	public void regist(String userFamilyName, String userLastName, String userFamilyNameKana,
-			String userLastNameKana, String userMail, String userPassword,
+			String userLastNameKana, String userMail, String hashedPassword,
 			String userGender, String userPostalCode, String userPrefecture,
 			String userAddress1, String userAddress2, String userAuthority, String delete_flag) throws SQLException {
 
@@ -67,7 +66,7 @@ public class RegistCompleteDAO {
 		System.out.println(userFamilyNameKana);
 		System.out.println(userLastNameKana);
 		System.out.println(userMail);
-		System.out.println(userPassword);
+		System.out.println(hashedPassword);
 		System.out.println(userGender);
 		System.out.println(userPostalCode);
 		System.out.println(userPrefecture);
@@ -94,7 +93,7 @@ public class RegistCompleteDAO {
 			preparedStatement.setString(3, userFamilyNameKana);
 			preparedStatement.setString(4, userLastNameKana);
 			preparedStatement.setString(5, userMail);
-			preparedStatement.setString(6, userPassword);
+			preparedStatement.setString(6, hashedPassword);
 			preparedStatement.setString(7, userGender);
 			preparedStatement.setString(8, userPostalCode);
 			preparedStatement.setString(9, userPrefecture);

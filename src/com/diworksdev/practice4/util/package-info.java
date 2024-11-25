@@ -5,4 +5,4 @@
  * @author sakitamako
  *
  */
-package com.diworksdev.practice3.dao;
+package com.diworksdev.practice4.util;
